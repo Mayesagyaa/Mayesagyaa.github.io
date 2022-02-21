@@ -1,0 +1,200 @@
+*{
+margin : 0;
+padding: 0;
+}
+
+body { 
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    overflow-x: hidden;
+    background-color: rgb(194, 139, 93);
+}
+nav .logo {
+    color: rgb(194, 139, 93);
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 3px;
+}
+
+nav { 
+    display: flex;
+    background-color: rgb(209, 200, 188);
+    justify-content: space-around;
+    padding: 20px 0;
+   
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+
+}
+nav ul li a {
+    color: rgb(194, 139, 93);
+    text-decoration: none;
+    font-size: 1.3em;
+}
+
+/* Hamburger menu*/
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 41px;
+    height: 28px;
+    left: -6.5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(194, 139, 93);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* Humburger menu animasi */
+.menu-toggle span:nth-child(2) {
+   transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+ }
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: whitesmoke;
+    transform: rotate(45deg) translate(-1px,-1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: whitesmoke;
+    transform: rotate(-45deg) translate(-1px,0);
+}
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform:scale(0);
+}
+
+/*CSS profile*/
+div.img {padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+     border-radius: 50%;
+     width:"300px"; 
+     height:"300px";
+}
+div.perkenalan {  
+    background-color:  rgb(209, 200, 188);
+    color: rgb(114, 62, 20);
+    font-size: 20px;
+    padding-top: 100x;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+/*CSS Contact*/
+div.data { background-color:  rgb(209, 200, 188);
+    color: rgb(114, 62, 20);
+    font-size: 20px;
+    padding-top: 100x;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;}
+
+/*CSS Tentang*/
+div.table  { background-color:  rgb(209, 200, 188);
+    color: rgb(114, 62, 20);
+    border-radius: 10px;
+    width: 50%;
+    height: 100%;
+    margin-left: 10px;
+    margin-top: 18px;
+    font-size: 23px;
+    font-family: "Zapf-Chancery", cursive;
+    padding-left: 70px;
+    padding-right: 90px;
+    padding-top: 23px;
+   }
+
+
+div.pengalaman {background-color:  rgb(209, 200, 188);
+    color: rgb(114, 62, 20);
+       border-radius: 10px;
+       width: 50%;
+       height: 100%;
+       margin-left: 10px;
+       margin-top: 18px;
+       font-size: 23px;
+       font-family: "Zapf-Chancery", cursive;
+       padding-left: 70px;
+    padding-right: 90px;    
+    padding-top: 23PX;            
+     }
+
+div.prestasi {background-color:  rgb(209, 200, 188);
+    color: rgb(114, 62, 20);
+     border-radius: 10px;
+     width: 50%;
+     height: 100%;
+     margin-left: 10px;
+     margin-top: 18px;
+      font-size: 23px;
+      padding-left: 70px;
+    padding-right: 90px;
+    padding-top: 23PX;
+     font-family: "Zapf-Chancery", cursive;}
+/*Responsive breakpoit*/
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 668px) {
+    .menu-toggle{
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(209, 200, 188);
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    div.perkenalan{
+    font-size: 20px;
+    padding-top: 20px;
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    font-family: 'Pacifico', cursive;}
+}
